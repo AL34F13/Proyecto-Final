@@ -1,65 +1,20 @@
 // JavaScript Document
 $(document).ready(function(e) {
-//document.addEventListener("deviceready",function(){
-cargarnombrejugador();	
-	var BaseDatos= window.sgqlitePlugin.openDataBasebase({name: "coloresBD.db", createFromLocation:1});
+document.addEventListener("deviceready",function(){
 	
+	$('#menu').on ('tap',function(){
+		navigator.vibrate(2000);
+		
+		
+
 	audio = window.plugins.LowLatencyAudio;
-	audio.preloadFX ('B1','audio/C.mp3',function(){}, function(msg){ alert ("Error " + msg);});
-	
-	audio.preloadFX ('B2','audio/D.mp3',function(){}, function(msg){ alert ("Error " + msg);});
-	
-	audio.preloadFX ('B3','audio/E.mp3',function(){}, function(msg){ alert ("Error " + msg);});
-	
-	audio.preloadFX ('B4','audio/F.mp3',function(){}, function(msg){ alert ("Error " + msg);});
-	
-$('#btnjugar').on ('tap',function(){
-	var pantalla=$.mobile.getScreenHeight();
-	var encabezado=$('.ui-header').outerHeight();
-	var pie=$('.ui-footer').outerHeight();
-	var contenido=$('.ui-content').outerHeight();
-	//alert ('pantalla ' + pantalla);
-	//alert ('encabezado ' + encabezado);
-	//alert ('pie' + pie);
-	//alert ('contenido ' + contenido);
-	var alto=(pantalla-encabezado-pie)/2;
-	$('.cuadro').height(alto);
-	
-	
-	
-});//btnjugar
-
-
-$('.cuadro').on ('vmousedown', function(){
-	$(this).addClass('pulsado');
-	$('#pantalla').append(quien($(this).attr('id')));	
-    });	
-	
-	$('.cuadro').on ('vmouseup', function(){
-	$(this).removeClass('pulsado');	
-    });	
-	
-
-
-function quien(q)
-{ 
-audio.play(q);
-return q.substring(1);
-}
-
-function cargarnombrejugador ()
-{
- basedatos.transaction(function(ejecutar){
-	var sql="SELECT NombreUsuario FROM Usuarios";
-	ejecutar.executeSql(sql,undefined,
-	 function (ejecutar,resultado){
-		var datosJugador = resultados.rows.item(0);
-		$('#jugador').text(datosJugador.NombreUsuario); 
-	 });
- });
-}	
-	
-	
-});//cuadro
-//});
-
+	audio.preloadFX ('cancion1','music/one.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('cancion2','music/two.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('btnmenu','music/Illuminati_Confirmed.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('btnjugadores','music/Smoke_Weed_Everyday.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('btntrofeos','music/GET_NOSCOPED.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('btnchamp','music/DAMN_SON.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+	audio.preloadFX ('sa1','music/.mp3',function(){}, function(msg){ alert ("Error " + msg);});
+});
+});
+});
